@@ -14,10 +14,11 @@ searchTerm = image = re.search(r"\bvalue=\"(.*?)\"", str(searchTerm[0])).group(1
 imgs = soup.find_all('img')
 
 i=0
+path = 'images/'
 for x in imgs:
     image = re.search(r"\bsrc=\"(\S+)\b", str(imgs[i])).group(1)
     print(image)
-    f = open(searchTerm+str(i)+'.jpg','wb')
+    f = open(path+searchTerm+str(i)+'.jpg','wb')
     f.write(requests.get(image).content)
     f.close()
     i += 1
