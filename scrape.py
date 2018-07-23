@@ -9,7 +9,7 @@ res = requests.get(url)
 soup = BeautifulSoup(res.content, 'html.parser')
 
 searchTerm = soup.find_all('input')
-searchTerm = image = re.search(r"\bvalue=\"(.*?)\"", str(searchTerm[0])).group(1)
+searchTerm = re.search(r"\bvalue=\"(.*?)\"", str(searchTerm[0])).group(1)
 
 imgs = soup.find_all('img')
 
